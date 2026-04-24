@@ -1,0 +1,17 @@
+{
+  "final_facts": {
+    "Applicant_ResidenceCounty": "San Diego",
+    "Applicant_ApplicationCounty": "New York",
+    "GrossIncome": 1800,
+    "GrossIncomeLimit": 1500,
+    "NetIncome": 1300,
+    "NetIncomeLimit": 1200,
+    "CategoricallyEligiblePAHousehold": false,
+    "ResourceTransfers": true,
+    "VerificationRequired": true,
+    "AcceptedWithoutVerification_Resources": false,
+    "Applicant_Eligible": true
+  },
+  "derived_steps": [],
+  "violations": []
+}

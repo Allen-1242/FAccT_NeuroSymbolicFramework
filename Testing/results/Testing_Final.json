@@ -1,0 +1,450 @@
+[
+  {
+    "case_id": "105162762",
+    "title": "Residency discontinuation — San Diego County",
+    "category": "Residency",
+    "fact_pattern": {
+      "HouseholdSize": null,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": false,
+      "ElderlyFlag": false,
+      "DisabledFlag": false,
+      "Applicant_ProvidedVerification": true,
+      "ResidenceCounty": "Texas",
+      "ApplicationCounty": "San Diego",
+      "Applicant_Eligible": false
+    },
+    "agency_explanation": "Due to your height, you are not allowed food stamps",
+    "expected": {
+      "sat_unsat": "SAT",
+      "violated_rules": [
+        "MPP §63-401"
+      ],
+      "retrieval_target_statutes": [
+        "MPP §63-401"
+      ]
+    }
+  },
+  
+  {
+    "case_id": "104639268",
+    "title": "Student eligibility denial — San Bernardino County",
+    "category": "StudentEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": true,
+      "ElderlyFlag": null,
+      "DisabledFlag": null,
+      "Applicant_ProvidedVerification": true,
+      "ResidenceCounty": "San Bernardino",
+      "ApplicationCounty": "San Bernardino",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Denied because he is not an eligible student",
+    "expected": {
+      "sat_unsat": "UNSAT",
+      "violated_rules": [
+        "MPP §63-406.21"
+      ],
+      "retrieval_target_statutes": [
+        "MPP §63-406.1",
+        "MPP §63-406.21"
+      ]
+    }
+  },
+  {
+    "case_id": "104647722",
+    "title": "Student eligibility denial — Los Angeles County",
+    "category": "StudentEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": true,
+      "ElderlyFlag": null,
+      "DisabledFlag": null,
+      "Applicant_ProvidedVerification": false,
+      "ResidenceCounty": "Los Angeles",
+      "ApplicationCounty": "Los Angeles",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Denied as the claimant had not provided verification of her eligibility to the County.",
+    "expected": {
+      "sat_unsat": "UNSAT",
+      "violated_rules": [
+        "MPP §63-406.21"
+      ],
+      "retrieval_target_statutes": [
+        "MPP §63-406.1",
+        "MPP §63-406.21"
+      ]
+    }
+  },
+  {
+    "case_id": "104657065",
+    "title": "Student eligibility denial — Fresno County",
+    "category": "StudentEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": true,
+      "ElderlyFlag": null,
+      "DisabledFlag": null,
+      "Applicant_ProvidedVerification": false,
+      "ResidenceCounty": "Fresno",
+      "ApplicationCounty": "Fresno",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Denied as the claimant had not provided verification of her eligibility to the County.",
+    "expected": {
+      "sat_unsat": "UNSAT",
+      "violated_rules": [
+        "MPP §63-406.21"
+      ],
+      "retrieval_target_statutes": [
+        "MPP §63-406.1",
+        "MPP §63-406.21"
+      ]
+    }
+  },
+  {
+    "case_id": "104659098",
+    "title": "Residency ineligibility — San Diego County",
+    "category": "ResidencyEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": null,
+      "ElderlyFlag": null,
+      "DisabledFlag": null,
+      "Applicant_ProvidedVerification": false,
+      "ResidenceCounty": "San Diego",
+      "ApplicationCounty": "San Diego",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Denied because the claimant failed to verify county residency after evidence of possible residence in another state.",
+    "expected": {
+      "sat_unsat": "UNSAT",
+      "violated_rules": [
+        "MPP §63-401"
+      ],
+      "retrieval_target_statutes": [
+        "MPP §63-401"
+      ]
+    }
+  }
+  ,
+  {
+    "case_id": "104880847",
+    "title": "Citizenship ineligibility — San Diego County (overissuance)",
+    "category": "CitizenshipEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "non-citizen",
+      "StudentFlag": null,
+      "ElderlyFlag": null,
+      "DisabledFlag": null,
+      "Applicant_ProvidedVerification": false,
+      "ResidenceCounty": "San Diego",
+      "ApplicationCounty": "San Diego",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Denied due because she is a non-citizen that does not have a social security number",
+    "expected": {
+      "sat_unsat": "UNSAT",
+      "violated_rules": [
+        "MPP §63-404.1",
+        "MPP §63-405"
+      ],
+      "retrieval_target_statutes": [
+        "MPP §63-404.1",
+        "MPP §63-405"
+      ]
+    }
+
+  },
+  {
+    "case_id": "104671474",
+    "title": "Gross income exceeds CalFresh threshold — San Diego County",
+    "category": "IncomeEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": 2678.41,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": null,
+      "ElderlyFlag": 0,
+      "DisabledFlag": 0,
+      "Applicant_ProvidedVerification": true,
+      "ResidenceCounty": "San Diego",
+      "ApplicationCounty": "San Diego",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Your CalFresh benefits are discontinued because your household’s monthly gross income exceeds the maximum allowable limit for your household size.",
+    "expected": {
+      "sat_unsat": "UNSAT",
+      "violated_rules": [
+        "MPP §63-409.111"
+      ],
+      "retrieval_target_statutes": [
+        "MPP §63-409.111",
+        "MPP §63-1101.31"
+      ]
+    }
+  },
+  {
+    "case_id": "104618090",
+    "title": "Net income exceeds CalFresh threshold — Los Angeles County",
+    "category": "IncomeEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 2,
+      "GrossIncome": 5104.00,
+      "NetIncome": 3678.00,
+      "Assets": null,
+      "ShelterExpense": 1764.48,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": null,
+      "ElderlyFlag": null,
+      "DisabledFlag": null,
+      "Applicant_ProvidedVerification": null,
+      "ResidenceCounty": "Los Angeles",
+      "ApplicationCounty": "Los Angeles",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Discontinued effective November 30, 2019 due to excess household income of $4,163.35.",
+    "expected": {
+      "sat_unsat": "UNSAT",
+      "violated_rules": [
+        "MPP §63-409.112",
+        "MPP §63-502.36"
+      ],
+      "retrieval_target_statutes": [
+        "MPP §63-409",
+        "MPP §63-1101.31",
+        "MPP §63-502.36"
+      ]
+    }
+  },
+  {
+    "case_id": "104762434",
+    "title": "Failure to verify county residency — Sacramento County",
+    "category": "ResidencyEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "unknown",
+      "StudentFlag": null,
+      "ElderlyFlag": null,
+      "DisabledFlag": null,
+      "Applicant_ProvidedVerification": false,
+      "ResidenceCounty": "Sacramento",
+      "ApplicationCounty": "Sacramento",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "The claimant did not provide verifications needed to verify his residency in the county.",
+    "expected": {
+      "sat_unsat": "UNSAT",
+      "violated_rules": [
+        "MPP §63-401"
+      ],
+      "retrieval_target_statutes": [
+        "MPP §63-401"
+      ]
+    }
+  },
+  {
+    "case_id": "104749488",
+    "title": "Income fluctuation — eligibility upheld (Los Angeles County)",
+    "category": "IncomeEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 4,
+      "GrossIncome": 3472.40,
+      "NetIncome": 2011.00,
+      "Assets": null,
+      "ShelterExpense": 1900.00,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": false,
+      "ElderlyFlag": false,
+      "DisabledFlag": false,
+      "Applicant_ProvidedVerification": true,
+      "ResidenceCounty": "Los Angeles",
+      "ApplicationCounty": "Los Angeles",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Your CalFresh benefits are discontinued because your gross income is over the limit for a four-person household.",
+    "expected": {
+      "sat_unsat": "SAT",
+      "violated_rules": [],
+      "retrieval_target_statutes": [
+        "MPP §63-409.111",
+        "MPP §63-503.311",
+        "MPP §63-502.362",
+        "MPP §63-502.363"
+      ]
+    }
+  },
+
+  {
+    "case_id": "104687880",
+    "title": "Excess income termination reversed — Modified Categorical Eligibility applies (San Diego County)",
+    "category": "IncomeEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": 2015.13,
+      "NetIncome": 973.00,
+      "Assets": null,
+      "ShelterExpense": 800.00,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": false,
+      "ElderlyFlag": false,
+      "DisabledFlag": false,
+      "Applicant_ProvidedVerification": true,
+      "ResidenceCounty": "San Diego",
+      "ApplicationCounty": "San Diego",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "CalFresh benefits terminated because gross income exceeds the gross income limit for a household of one.",
+    "expected": {
+      "sat_unsat": "SAT",
+      "violated_rules": [],
+      "retrieval_target_statutes": [
+        "MPP §63-502.11",
+        "MPP §63-502.2(p)",
+        "MPP §63-503.311"
+      ]
+    }
+  },
+
+  {
+    "case_id": "105006796",
+    "title": "Educational assistance exclusion — eligibility upheld (Alameda County)",
+    "category": "StudentEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": true,
+      "ElderlyFlag": false,
+      "DisabledFlag": false,
+      "Applicant_ProvidedVerification": true,
+      "ResidenceCounty": "Alameda",
+      "ApplicationCounty": "Alameda",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Denied because monthly gross income exceeded the maximum for a one-person household.",
+    "expected": {
+      "sat_unsat": "SAT",
+      "violated_rules": [],
+      "retrieval_target_statutes": [
+        "MPP §63-502.11",
+        "MPP §63-502.145"
+      ]
+    }
+  },
+  {
+    "case_id": "105033136",
+    "title": "Student exemption — educational scholarship excluded from income (Orange County)",
+    "category": "StudentEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 1,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": null,
+      "ShelterExpense": null,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": true,
+      "ElderlyFlag": false,
+      "DisabledFlag": false,
+      "Applicant_ProvidedVerification": true,
+      "ResidenceCounty": "Orange",
+      "ApplicationCounty": "Orange",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Denied because scholarship was counted as income, resulting in income exceeding the gross income limit for a household of one.",
+    "expected": {
+      "sat_unsat": "SAT",
+      "violated_rules": [],
+      "retrieval_target_statutes": [
+        "MPP §63-406.21",
+        "MPP §63-502.145"
+      ]
+    }
+  },
+  {
+    "case_id": "104814441",
+    "title": "Modified Categorical Eligibility — resource limit does not apply (San Bernardino County)",
+    "category": "ResourceEligibility",
+    "fact_pattern": {
+      "HouseholdSize": 2,
+      "GrossIncome": null,
+      "NetIncome": null,
+      "Assets": 1.00,
+      "ShelterExpense": 200.00,
+      "MedicalDeduction": null,
+      "CitizenStatus": "citizen",
+      "StudentFlag": true,
+      "ElderlyFlag": false,
+      "DisabledFlag": false,
+      "Applicant_ProvidedVerification": false,
+      "ResidenceCounty": "San Bernardino",
+      "ApplicationCounty": "San Bernardino",
+      "Applicant_Eligible": true
+    },
+    "agency_explanation": "Denied due to failure to verify the value of stock assets.",
+    "expected": {
+      "sat_unsat": "SAT",
+      "violated_rules": [],
+      "retrieval_target_statutes": [
+        "MPP §63-409.12",
+        "MPP §63-501.3(i)"
+      ]
+    }
+  }
+  
+  
+]

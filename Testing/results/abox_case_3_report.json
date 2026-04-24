@@ -1,0 +1,161 @@
+{
+  "case_index": 3,
+  "rule_id": "Shelter_Cap_Deduction",
+  "entry_rules": [],
+  "facts": {
+    "GrossIncome": 1300,
+    "UnearnedIncome": 200,
+    "DependentDeduction": 480,
+    "MedicalDeduction": 0,
+    "ChildSupportDeduction": 0,
+    "ShelterExpense": 700,
+    "BenefitSupplement": 0,
+    "Assets": 1500,
+    "CitizenStatus": "citizen",
+    "Applicant_ResidenceCounty": "Alameda",
+    "Applicant_ApplicationCounty": "Alameda",
+    "ElderlyFlag": 0,
+    "DisabledFlag": 0
+  },
+  "expected_decision": "Ineligible",
+  "expected_reason": "Shelter deduction exceeds the allowable cap",
+  "llm_explanation": "The reported shelter expense is higher than the maximum amount that can be counted toward deductions, making the household ineligible.",
+  "purpose": "Verifies shelter cap enforcement",
+  "smt_result": {
+    "status": "unsat",
+    "satisfied": [
+      {
+        "id": "Rule_StateResidencyRequirement",
+        "citation": "MPP \u00a763-401.1",
+        "text": "A household must reside within the administering state to qualify for participation."
+      },
+      {
+        "id": "Rule_GrossIncomeVerificationExemption",
+        "citation": "MPP \u00a763-301",
+        "text": "For categorically eligible PA households, the county welfare department shall not require verification of gross income."
+      },
+      {
+        "id": "Rule_NetIncomeVerificationExemption",
+        "citation": "MPP \u00a763-301",
+        "text": "For categorically eligible PA households, the county welfare department shall not require verification of net income."
+      },
+      {
+        "id": "Rule_ResourceTransfersNotAccepted",
+        "citation": "MPP \u00a763-301.822",
+        "text": "Resource transfers shall not be accepted without verification for categorically eligible households."
+      },
+      {
+        "id": "Rule_SponsoredNoncitizenInformationRequired",
+        "citation": "MPP \u00a763-301.822",
+        "text": "Sponsored noncitizens shall cooperate in providing sponsor information as specified in Section 63-405.7."
+      },
+      {
+        "id": "Rule_NetIncomeDeductionForBenefits",
+        "citation": "MPP \u00a763-503.41",
+        "text": "Thirty percent of the household's net food stamp income shall be deducted from the reduced Thrifty Food Plan amount."
+      },
+      {
+        "id": "Rule_GrossIncomeOverLimit",
+        "citation": "MPP \u00a763-301.1",
+        "text": "Households whose gross income exceeds the established limit are ineligible for benefits."
+      },
+      {
+        "id": "Rule_NetIncomeOverLimit",
+        "citation": "MPP \u00a763-301.2",
+        "text": "Households whose net income exceeds the limit are ineligible for participation."
+      },
+      {
+        "id": "Rule_AcceptedWithoutVerification_GrossIncome",
+        "citation": "MPP \u00a763-301.82",
+        "text": "If the gross income factor is accepted without verification for categorically eligible PA households, it shall not affect eligibility."
+      },
+      {
+        "id": "Rule_GoodCauseForVoluntaryQuit",
+        "citation": "MPP \u00a763-301.212",
+        "text": "The CWD shall determine whether good cause exists upon finding that an applicant voluntarily quit or reduced work hours."
+      },
+      {
+        "id": "Rule_IneligibilityWithoutGoodCause",
+        "citation": "MPP \u00a763-301.212",
+        "text": "Applicants who voluntarily quit or reduce work effort without good cause are ineligible for benefits."
+      },
+      {
+        "id": "Rule_ResourcesAcceptedWithoutVerification",
+        "citation": "MPP \u00a763-301.822",
+        "text": "Resources are accepted without verification for categorically eligible households."
+      },
+      {
+        "id": "Rule_ResourceTransfersRequireVerification",
+        "citation": "MPP \u00a763-301.822",
+        "text": "Resource transfers must be verified to determine eligibility."
+      },
+      {
+        "id": "Rule_ResourceTransferUnverifiedViolation",
+        "citation": "MPP \u00a763-301.822",
+        "text": "If the household transfers resources but the agency fails to verify them, eligibility determination violates policy."
+      },
+      {
+        "id": "Rule_ExcessMedicalCostNotDeductible",
+        "citation": "MPP \u00a763-502.33(c)",
+        "text": "Medical expenses exceeding allowable limits or not verified shall not be deducted from income."
+      },
+      {
+        "id": "Rule_CountableIncomeAfterMedicalDeduction",
+        "citation": "MPP \u00a763-502.33",
+        "text": "Countable income after medical deductions is the household's total income minus allowable medical deductions."
+      },
+      {
+        "id": "Rule_ShelterCap_Enforced",
+        "citation": "MPP \u00a763-502.34",
+        "text": "Shelter deductions for households without elderly or disabled members shall not exceed the maximum shelter cap amount."
+      },
+      {
+        "id": "Rule_ShelterCap_BasicLimit",
+        "citation": "MPP \u00a763-502.34",
+        "text": "Shelter expenses that exceed the allowable cap amount are not fully deductible."
+      }
+    ],
+    "violated": [
+      {
+        "id": "Rule_ResidencyRequirement",
+        "citation": "MPP \u00a763-401.1",
+        "text": "A household must reside in the county in which it files an application for participation."
+      },
+      {
+        "id": "Rule_SingleCountyParticipation",
+        "citation": "MPP \u00a763-401.2",
+        "text": "No individual may participate as a member of more than one household or county in any month except for eligible residents of shelters for battered women and children."
+      },
+      {
+        "id": "Rule_GrossIncomeWithinLimit",
+        "citation": "MPP \u00a763-301.1",
+        "text": "Households whose gross income does not exceed the established limit meet the gross income test for eligibility."
+      },
+      {
+        "id": "Rule_IncomeWithinLimits",
+        "citation": "MPP \u00a763-301.1-2",
+        "text": "Households with both gross and net income at or below the respective limits are eligible for participation."
+      },
+      {
+        "id": "Rule_MedicalDeduction_EligibilityCondition",
+        "citation": "MPP \u00a763-502.33",
+        "text": "Households containing an elderly or disabled member are entitled to a deduction for verified medical expenses exceeding $35 per month."
+      },
+      {
+        "id": "Rule_MedicalDeduction_AppliedCorrectly",
+        "citation": "MPP \u00a763-502.33",
+        "text": "If an elderly or disabled household has verified medical expenses above the threshold, the deduction shall be applied in computing net income."
+      },
+      {
+        "id": "Rule_MedicalDeduction_VerificationRequired",
+        "citation": "MPP \u00a763-502.33(c)",
+        "text": "Medical expenses claimed as deductions must be verified by the county welfare department before application."
+      },
+      {
+        "id": "Rule_AllowableMedicalExpenseItems",
+        "citation": "MPP \u00a763-502.331",
+        "text": "Allowable medical expenses include prescription drugs, medical supplies, dental care, health insurance premiums, and costs for nursing services."
+      }
+    ]
+  }
+}

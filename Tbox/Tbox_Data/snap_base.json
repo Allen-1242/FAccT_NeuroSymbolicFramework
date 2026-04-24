@@ -1,0 +1,131 @@
+{
+    "ontology": {
+      "id": "SNAP_LegalOntology",
+      "title": "SNAP Eligibility Legal Ontology (LRMoo-aligned)",
+      "description": "Base ontology for modeling legal rules, concepts, and decisions in the Supplemental Nutrition Assistance Program (SNAP).",
+      "alignment": "Extends LRMoo (F1 Work, F2 Expression, F12 Nomen, E55 Type, E13 Attribute Assignment, E7 Activity)"
+    },
+  
+    "classes": {
+      "SNAP_LegalWork": {
+        "definition": "Corpus or collection of SNAP statutes or regulations (e.g., CFR Title 7, MPP).",
+        "alignsWith": "lrmoo:F1_Work"
+      },
+      "SNAP_LegalExpression": {
+        "definition": "Specific textual realization of a statute section (e.g., §273.9(a)).",
+        "alignsWith": "lrmoo:F2_Expression"
+      },
+      "SNAP_NormativeStatement": {
+        "definition": "Machine-interpretable legal rule derived from a statute section.",
+        "alignsWith": "lrmoo:F12_Nomen"
+      },
+      "SNAP_LegalConcept": {
+        "definition": "Domain concept referenced by rules (Income, Residency, Citizenship, etc.).",
+        "alignsWith": "crm:E55_Type"
+      },
+      "SNAP_LegalDecision": {
+        "definition": "Outcome state of rule evaluation (Eligible, Ineligible, Pending, etc.).",
+        "alignsWith": "crm:E7_Activity"
+      },
+      "SNAP_LegalFact": {
+        "definition": "Case-specific facts (ABox) that are evaluated against rules.",
+        "alignsWith": "crm:E13_Attribute_Assignment"
+      },
+      "SNAP_NormApplication": {
+        "definition": "Process of applying a rule to facts to reach a decision.",
+        "alignsWith": "crm:E7_Activity"
+      }
+    },
+  
+    "object_properties": {
+      "embodies": {
+        "domain": "SNAP_LegalExpression",
+        "range": "SNAP_NormativeStatement",
+        "description": "Expression embodies (contains) a NormativeStatement."
+      },
+      "citesExpression": {
+        "domain": "SNAP_NormativeStatement",
+        "range": "SNAP_LegalExpression",
+        "description": "Rule cites a specific statute Expression."
+      },
+      "hasLegalConcept": {
+        "domain": "SNAP_NormativeStatement",
+        "range": "SNAP_LegalConcept",
+        "description": "Rule references one or more legal concepts."
+      },
+      "determines": {
+        "domain": "SNAP_NormativeStatement",
+        "range": "SNAP_LegalDecision",
+        "description": "Rule determines a decision state."
+      },
+      "appliesRule": {
+        "domain": "SNAP_NormApplication",
+        "range": "SNAP_NormativeStatement",
+        "description": "NormApplication applies a given rule."
+      },
+      "evaluates": {
+        "domain": "SNAP_NormApplication",
+        "range": "SNAP_LegalFact",
+        "description": "NormApplication evaluates a set of case facts."
+      },
+      "resultsIn": {
+        "domain": "SNAP_NormApplication",
+        "range": "SNAP_LegalDecision",
+        "description": "NormApplication yields a decision."
+      },
+      "violates": {
+        "domain": "SNAP_LegalFact",
+        "range": "SNAP_NormativeStatement",
+        "description": "Case facts violate a specific rule."
+      },
+      "compliesWith": {
+        "domain": "SNAP_LegalFact",
+        "range": "SNAP_NormativeStatement",
+        "description": "Case facts comply with a specific rule."
+      }
+    },
+  
+    "data_properties": {
+      "hasText": {
+        "domain": ["SNAP_LegalExpression", "SNAP_NormativeStatement"],
+        "range": "string",
+        "description": "Plain-language text of a statute section or rule."
+      },
+      "hasLogic": {
+        "domain": "SNAP_NormativeStatement",
+        "range": "string",
+        "description": "Compact logic string for SMT reasoning (e.g., 'Implies(income > threshold, Not(eligible))')."
+      },
+      "hasCitation": {
+        "domain": ["SNAP_LegalExpression", "SNAP_NormativeStatement"],
+        "range": "string",
+        "description": "Canonical legal citation string (e.g., '7 CFR §273.9(a)')."
+      },
+      "hasSectionId": {
+        "domain": "SNAP_LegalExpression",
+        "range": "string",
+        "description": "Local section identifier (e.g., '§63-401')."
+      },
+      "hasModality": {
+        "domain": "SNAP_NormativeStatement",
+        "range": "string",
+        "description": "Deontic modality: Obligation / Prohibition / Permission."
+      },
+      "conceptType": {
+        "domain": "SNAP_LegalConcept",
+        "range": "string",
+        "description": "Datatype for concept values: Numeric / Categorical / Text / Boolean."
+      }
+    },
+  
+    "instances": {
+      "SNAP_LegalWork": [
+        {
+          "id": "SNAP_Regulation_Corpus",
+          "title": "SNAP Eligibility Regulations (CFR Title 7, MPP §63)",
+          "definition": "Top-level container for SNAP rules and expressions."
+        }
+      ]
+    }
+  }
+  

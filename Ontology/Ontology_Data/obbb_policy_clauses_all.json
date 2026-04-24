@@ -1,0 +1,61 @@
+[
+    {
+      "id": "OBBB_10102_AgeExpansion",
+      "title": "Expanded Work Requirements (Age 65 Rule)",
+      "section": "Sec. 10102",
+      "text": "Raises the age for those who must meet work requirements to include adults 65 and younger.",
+      "topic": "Work Requirements",
+      "matches": [
+        {"citation": "MPP §63-409.112", "score": 0.716},
+        {"citation": "MPP §63-410.321", "score": 0.671},
+        {"citation": "MPP §63-505.61",  "score": 0.670},
+        {"citation": "MPP §63-405.333", "score": 0.641},
+        {"citation": "MPP §63-078.25",  "score": 0.625},
+        {"citation": "MPP §63-410.511", "score": 0.614},
+        {"citation": "MPP §63-403.3",   "score": 0.608},
+        {"citation": "MPP §63-409.112", "score": 0.607},
+        {"citation": "MPP §63-403.3",   "score": 0.564},
+        {"citation": "MPP §63-409.112", "score": 0.558},
+        {"citation": "MPP §63-130.2",   "score": 0.553}
+      ]
+    },
+    {
+      "id": "OBBB_10102_ParentRequirement",
+      "title": "Parental Participation Requirement",
+      "section": "Sec. 10102",
+      "text": "Requires parents and household members to meet work requirements if a dependent child is age 14 or older.",
+      "topic": "Work Requirements",
+      "matches": [
+        {"citation": "MPP §63-406.214", "score": 0.765},
+        {"citation": "MPP §63-406.213", "score": 0.747},
+        {"citation": "MPP §63-402.142", "score": 0.724},
+        {"citation": "MPP §63-601.123", "score": 0.723},
+        {"citation": "MPP §63-505.141", "score": 0.714},
+        {"citation": "MPP §63-407.72",  "score": 0.687},
+        {"citation": "MPP §63-405.333", "score": 0.685},
+        {"citation": "MPP §63-410.321", "score": 0.680},
+        {"citation": "MPP §63-405.332", "score": 0.673},
+        {"citation": "MPP §63-407.852", "score": 0.672},
+        {"citation": "MPP §63-094.21",  "score": 0.656},
+        {"citation": "MPP §63-095.21",  "score": 0.656},
+        {"citation": "MPP §63-508.612", "score": 0.639},
+        {"citation": "MPP §63-406.213", "score": 0.608}
+      ]
+    },
+    {
+      "id": "OBBB_10102_IndigenousExemption",
+      "title": "Indigenous Exemption from Work Requirements",
+      "section": "Sec. 10102",
+      "text": "Excludes Indians, Urban Indians, or California Indians from the ABAWD work requirement expansion.",
+      "topic": "Exemptions",
+      "matches": [
+        {"citation": "MPP §63-410.3",   "score": 0.677},
+        {"citation": "MPP §63-410.33",  "score": 0.656},
+        {"citation": "MPP §63-407.71",  "score": 0.647},
+        {"citation": "MPP §63-405.2",   "score": 0.647},
+        {"citation": "MPP §63-502.12",  "score": 0.644},
+        {"citation": "MPP §63-206.4",   "score": 0.591}
+      ]
+    }
+  ]
+  

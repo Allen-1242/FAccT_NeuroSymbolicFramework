@@ -1,0 +1,38 @@
+{
+  "case_index": 2,
+  "rule_id": "Medical_Expense_Deduction",
+  "entry_rules": [
+    "Rule_MedicalDeduction_VerificationRequired"
+  ],
+  "facts": {
+    "GrossIncome": 1200,
+    "UnearnedIncome": 200,
+    "DependentDeduction": 480,
+    "MedicalDeduction": 0,
+    "ChildSupportDeduction": 0,
+    "ShelterExpense": 350,
+    "BenefitSupplement": 0,
+    "Assets": 1300,
+    "CitizenStatus": "citizen",
+    "Applicant_ResidenceCounty": "Alameda",
+    "Applicant_ApplicationCounty": "Alameda",
+    "ElderlyFlag": 1,
+    "DisabledFlag": 1,
+    "Applicant_Eligible": true
+  },
+  "expected_decision": "Ineligible",
+  "expected_reason": "Medical deduction missing for elderly member",
+  "llm_explanation": "Eligible medical expenses were not deducted for a disabled qualifying household member, affecting the household\u2019s eligibility outcome, verification required",
+  "purpose": "Tests medical expense handling",
+  "smt_result": {
+    "status": "unsat",
+    "satisfied": [],
+    "violated": [
+      {
+        "id": "Rule_MedicalDeduction_VerificationRequired",
+        "citation": "MPP \u00a763-502.33(c)",
+        "text": "Medical expenses claimed as deductions must be verified by the county welfare department before application."
+      }
+    ]
+  }
+}

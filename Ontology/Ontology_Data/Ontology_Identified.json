@@ -1,0 +1,28 @@
+[
+  {
+    "rule_id": "Gross_Income_Limit",
+    "expected_decision": "Ineligible",
+    "expected_reason": "Gross income exceeds the allowable limit for household size",
+    "purpose": "Tests income boundary logic",
+    "match_result": {
+      "outer_node": "IncomeEligibility",
+      "outer_score": 0.837,
+      "inner_matches": [
+        {
+          "node": "GrossIncome",
+          "score": 0.877
+        },
+        {
+          "node": "NetIncome",
+          "score": 0.871
+        },
+        {
+          "node": "GrossIncomeLimit",
+          "score": 0.857
+        }
+      ],
+      "num_sentences": 1,
+      "num_clauses": 1
+    }
+  }
+]

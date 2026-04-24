@@ -1,0 +1,11 @@
+[
+  {
+    "rule_id": null,
+    "expected_decision": null,
+    "expected_reason": null,
+    "purpose": null,
+    "match_result": {
+      "error": "No valid sentences extracted"
+    }
+  }
+]

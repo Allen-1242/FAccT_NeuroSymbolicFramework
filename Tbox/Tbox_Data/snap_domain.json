@@ -1,0 +1,434 @@
+{
+  "Applicant": {
+    "definition": "Represents an individual or household applying for SNAP benefits.",
+    "conceptType": "Entity",
+    "citation": "MPP §63-401",
+    "subtypes": {
+      "Applicant_Eligible": {
+        "definition": "Indicates whether the applicant is eligible for participation.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "Boolean"
+      },
+      "Applicant_ResidenceCounty": {
+        "definition": "The county in which the applicant resides.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "String"
+      },
+      "Applicant_ApplicationCounty": {
+        "definition": "The county in which the applicant files an application.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "String"
+      },
+      "Applicant_ResidesInAdministeringState": {
+        "definition": "True if the applicant resides in the administering state.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "Boolean"
+      },
+      "Applicant_ParticipatesInMultipleCounties": {
+        "definition": "Indicates whether the applicant participates in more than one county.",
+        "citation": "MPP §63-401.2",
+        "conceptType": "Boolean"
+      },
+      "Applicant_HasFixedAddress": {
+        "definition": "Indicates whether the applicant has a fixed mailing or dwelling address.",
+        "citation": "MPP §63-401.5",
+        "conceptType": "Boolean"
+      }, 
+        "Applicant_ResidenceState": {
+        "definition": "The state in which the applicant resides.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "String"
+      },
+      "AdministeringState": {
+        "definition": "The state administering the SNAP program for this application.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "String"
+      },
+      "Applicant_ProvidedVerification": {
+        "definition": "Indicates whether the applicant provided the verification requested by the agency.",
+        "citation": "MPP §63-300.5(a)(4)",
+        "conceptType": "Boolean"
+      }, 
+      "Applicant_HasSSN": {
+        "definition": "Indicates whether the applicant possesses a valid Social Security Number as required prior to certification.",
+        "citation": "MPP §63-404.1",
+        "conceptType": "Boolean"
+      }
+
+
+    }
+  },
+
+  "Agency": {
+    "definition": "Represents the county welfare department administering SNAP.",
+    "conceptType": "Entity",
+    "citation": "MPP §63-401",
+    "subtypes": {
+      "Agency_ImposesDurationalResidency": {
+        "definition": "True if the agency imposes durational residency requirements.",
+        "citation": "MPP §63-401.4",
+        "conceptType": "Boolean"
+      },
+      "Agency_ViolatesPolicy": {
+        "definition": "Indicates whether the agency violates policy obligations.",
+        "citation": "MPP §63-401.4",
+        "conceptType": "Boolean"
+      },
+      "Agency_RequiredToVerifyResidency": {
+        "definition": "True if the agency must verify residency information.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "Boolean"
+      },
+      "Agency_RequiresGrossIncomeVerification": {
+        "definition": "True if the agency requires verification of gross income.",
+        "conceptType": "Boolean"
+      },
+      "Agency_RequiresNetIncomeVerification": {
+        "definition": "True if the agency requires verification of net income.",
+        "conceptType": "Boolean"
+      }
+    }
+  },
+
+  "Residency": {
+    "definition": "Rules governing the jurisdiction where the household resides.",
+    "conceptType": "Categorical",
+    "citation": "MPP §63-401",
+    "subtypes": {
+      "ResidencyInformation_Questionable": {
+        "definition": "True if the residency information provided by the applicant is questionable.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "Boolean"
+      },
+      "CountyResidency": {
+        "definition": "Residence in the county of application.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "Categorical"
+      },
+      "StateResidency": {
+        "definition": "Residence within the administering state.",
+        "citation": "MPP §63-401.1",
+        "conceptType": "Categorical"
+      },
+      "NoFixedDwellingRequired": {
+        "definition": "Applicant need not reside in a permanent dwelling or have a fixed mailing address to qualify.",
+        "citation": "MPP §63-401.5",
+        "conceptType": "Boolean"
+      },
+      "SingleCountyParticipation": {
+        "definition": "Applicant may not participate in more than one county per month, except for specific exceptions.",
+        "citation": "MPP §63-401.2",
+        "conceptType": "Boolean"
+      },
+      "NoDurationalRequirement": {
+        "definition": "The county shall not impose any durational residency requirement.",
+        "citation": "MPP §63-401.4",
+        "conceptType": "Boolean"
+      }, 
+      "CategoricallyEligiblePAHousehold": {
+      "definition": "True if the household qualifies categorically for PA.",
+      "conceptType": "Boolean"
+    }
+    }
+  },
+
+    "IncomeEligibility": {
+    "definition": "Income factors accepted without verification for categorically eligible PA households.",
+    "conceptType": "Numeric",
+    "citation": "MPP §63-301",
+    "subtypes": {
+      "GrossIncomeLimit": {
+        "definition": "Total household income limit before deductions, accepted without verification for categorically eligible PA households.",
+        "citation": "MPP §63-301.1",
+        "conceptType": "Threshold"
+      },
+      "NetIncomeLimit": {
+        "definition": "Net income limit after allowable deductions, accepted without verification for categorically eligible PA households.",
+        "citation": "MPP §63-301.2",
+        "conceptType": "Threshold"
+      },
+      "GrossIncome": {
+        "definition": "Total household income before deductions.",
+        "citation": ["MPP §63-301.1", "MPP §63-502.11"],
+        "conceptType": "Numeric"
+      },
+      "NetIncome": {
+        "definition": "Household income after allowable deductions.",
+        "citation": "MPP §63-301.2",
+        "conceptType": "Numeric"
+      },
+      "CategoricallyEligiblePAHousehold": {
+        "definition": "Indicates whether the household is categorically eligible for participation.",
+        "citation": "MPP §63-301.82",
+        "conceptType": "Boolean"
+      },
+      "AcceptedWithoutVerification_GrossIncome": {
+        "definition": "Indicates whether gross income limit is accepted without verification.",
+        "citation": "MPP §63-301.82",
+        "conceptType": "Boolean"
+      },
+      "AcceptedWithoutVerification_NetIncome": {
+        "definition": "Indicates whether net income limit is accepted without verification.",
+        "citation": "MPP §63-301.82",
+        "conceptType": "Boolean"
+      },
+      "Applicant_VoluntaryQuit": {
+        "definition": "True if the applicant voluntarily quit employment.",
+        "citation": "MPP §63-301.212",
+        "conceptType": "Boolean"
+      },
+      "Applicant_ReducedWorkHours": {
+        "definition": "True if the applicant voluntarily reduced the number of hours being worked.",
+        "citation": "MPP §63-301.212",
+        "conceptType": "Boolean"
+      },
+      "Applicant_HasGoodCause": {
+        "definition": "True if the applicant demonstrates good cause for quitting or reducing work effort.",
+        "citation": "MPP §63-408.4",
+        "conceptType": "Boolean"
+      },
+      "Agency_DeterminesGoodCause": {
+        "definition": "True if the CWD determines that good cause exists when an applicant quits or reduces work effort.",
+        "citation": "MPP §63-301.212",
+        "conceptType": "Boolean"
+      },
+      "CombinedIncomeTest": {
+        "definition": "Represents the combined gross and net income tests for SNAP eligibility.",
+        "citation": "MPP §63-301.1-2",
+        "conceptType": "Boolean"
+      },
+      "IncomeWithinLimits": {
+        "definition": "True if both gross and net income are at or below their respective thresholds.",
+        "citation": "MPP §63-301.1-2",
+        "conceptType": "Boolean"
+      },
+      "CategoricallyEligible_MCE": {
+        "definition": "Indicates whether the household qualifies for Modified Categorical Eligibility.",
+        "citation": "MPP §63-301.82",
+        "conceptType": "Boolean"
+      }
+    }
+  },
+
+    "ResourceEligibility": {
+    "definition": "Household resources accepted without verification for categorically eligible households, except resource transfers.",
+    "conceptType": "Numeric",
+    "citation": "MPP §63-301.822",
+    "subtypes": {
+      "Resources": {
+        "definition": "Total countable resources available to the household.",
+        "citation": "MPP §63-301.822",
+        "conceptType": "Numeric"
+      },
+      "ResourceTransfers": {
+        "definition": "Transfers of household resources that may affect eligibility.",
+        "citation": "MPP §63-301.822",
+        "conceptType": "Boolean"
+      },
+      "VerificationRequired": {
+        "definition": "Indicates that verification is required for a specific resource factor.",
+        "citation": "MPP §63-301.822",
+        "conceptType": "Boolean"
+      },
+      "AcceptedWithoutVerification_Resources": {
+        "definition": "Indicates whether resources are accepted without verification.",
+        "citation": "MPP §63-301.822",
+        "conceptType": "Boolean"
+      }
+    }
+  },
+
+
+  "SponsoredNoncitizen": {
+    "definition": "Noncitizen whose eligibility depends on sponsor information provided under federal and state regulations.",
+    "conceptType": "Categorical",
+    "citation": "MPP §63-301.822",
+    "subtypes": {
+      "SponsoredNoncitizen": {
+        "definition": "Applicant identified as a sponsored noncitizen.",
+        "citation": "MPP §63-301.822",
+        "conceptType": "Boolean"
+      },
+      "SponsorInformation": {
+        "definition": "Information provided about the sponsor under Section 63-405.7.",
+        "citation": "MPP §63-405.7",
+        "conceptType": "String"
+      },
+      "MustProvide_SponsorInformation": {
+        "definition": "Indicates obligation of the sponsored noncitizen to provide sponsor information.",
+        "citation": "MPP §63-301.822",
+        "conceptType": "Boolean"
+      }
+    }
+  },
+
+  "BenefitComputation": {
+    "definition": "Computation of household benefit amount using reductions and income deductions from the Thrifty Food Plan.",
+    "conceptType": "NumericComputation",
+    "citation": "MPP §63-503.41",
+    "subtypes": {
+      "BenefitAmount": {
+        "definition": "Final computed benefit amount for the household.",
+        "citation": "MPP §63-503.41",
+        "conceptType": "Numeric"
+      },
+      "ThriftyFoodPlanAmount": {
+        "definition": "Baseline Thrifty Food Plan amount before deductions or reductions.",
+        "citation": "MPP §63-503.41",
+        "conceptType": "Numeric"
+      },
+      "ReductionRate": {
+        "definition": "Percentage reduction applied to the Thrifty Food Plan based on household size.",
+        "citation": "MPP §63-503.41",
+        "conceptType": "Numeric"
+      },
+      "IncomeDeduction": {
+        "definition": "Thirty percent of household's net food stamp income is deducted from the reduced Thrifty Food Plan amount.",
+        "citation": "MPP §63-503.41",
+        "conceptType": "Numeric"
+      },
+      "HouseholdSize": {
+        "definition": "Number of persons in the household, used to calculate the reduction rate.",
+        "citation": "MPP §63-503.41",
+        "conceptType": "Numeric"
+      }
+    }
+  },
+"MedicalExpenseDeduction": {
+  "definition": "Represents medical expenses that can be deducted from household income for members.",
+  "conceptType": "NumericComputation",
+  "citation": "MPP §63-502.33–63-502.331",
+  "subtypes": {
+    "MedicalDeduction": {
+      "definition": "Total allowable medical expenses deducted from income for elderly or disabled household members.",
+      "citation": "MPP §63-502.33",
+      "conceptType": "Numeric"
+    },
+    "AllowableMedicalExpenseItem": {
+      "definition": "An individual cost item that qualifies as an allowable medical expense (e.g., prescription drugs, medical supplies, health insurance premiums).",
+      "citation": "MPP §63-502.331",
+      "conceptType": "Categorical"
+    },
+    "MedicalDeductionApplied": {
+      "definition": "Indicates whether a medical deduction has been applied during benefit computation.",
+      "citation": "MPP §63-502.33",
+      "conceptType": "Boolean"
+    },
+    "ElderlyFlag": {
+      "definition": "True if the household contains a member aged 60 or older and thus may qualify for the medical deduction.",
+      "citation": "MPP §63-502.33",
+      "conceptType": "Boolean"
+    },
+    "DisabledFlag": {
+      "definition": "True if the household contains a member meeting the definition of disabled, qualifying for medical expense deductions.",
+      "citation": "MPP §63-102(e)(1)",
+      "conceptType": "Boolean"
+    },
+    "MedicalExpenseThreshold": {
+      "definition": "Minimum allowable out-of-pocket medical expense amount ($35 per month) that qualifies for deduction.",
+      "citation": "MPP §63-502.33(b)",
+      "conceptType": "Threshold"
+    },
+    "MedicalVerificationRequired": {
+      "definition": "True if verification of medical expenses is required by the county welfare department prior to applying the deduction.",
+      "citation": "MPP §63-502.33(c)",
+      "conceptType": "Boolean"
+    },
+    "CountableIncomeAfterMedicalDeduction": {
+      "definition": "Household income remaining after applying allowable medical deductions, used in subsequent benefit computation.",
+      "citation": "MPP §63-502.33",
+      "conceptType": "Numeric"
+    },
+    "ExcessMedicalCostNotDeductible": {
+      "definition": "True if the medical costs claimed exceed allowable limits or are not verified",
+      "citation": "MPP §63-502.33(c)",
+      "conceptType": "Boolean"
+    }
+  }
+},
+"ShelterDeduction": {
+  "definition": "Represents deductions for shelter costs subject to a maximum cap unless the household contains an elderly or disabled member.",
+  "conceptType": "NumericComputation",
+  "citation": "MPP §63-502.34",
+  "subtypes": {
+    "ShelterExpense": {
+      "definition": "Reported monthly shelter costs such as rent, mortgage, property taxes, and utilities.",
+      "citation": "MPP §63-502.34",
+      "conceptType": "Numeric"
+    },
+    "ShelterCapLimit": {
+      "definition": "The maximum allowable shelter deduction for households without elderly or disabled members.",
+      "citation": "MPP §63-502.34(a)",
+      "conceptType": "Threshold"
+    },
+    "ShelterDeductionApplied": {
+      "definition": "True if the shelter deduction applied does not exceed the allowable cap.",
+      "citation": "MPP §63-502.34",
+      "conceptType": "Boolean"
+    },
+    "ExcessShelterExpenseDisallowed": {
+      "definition": "True if reported shelter costs exceed the allowable cap and no elderly/disabled exemption applies.",
+      "citation": "MPP §63-502.34(b)",
+      "conceptType": "Boolean"
+    }
+  }
+},
+
+"StudentEligibility": {
+  "definition": "Rules governing eligibility of students in institutions of higher education for CalFresh benefits.",
+  "conceptType": "Categorical",
+  "citation": "MPP §63-406.1, MPP §63-406.21",
+  "subtypes": {
+    "Applicant_IsStudent": {
+      "definition": "True if the applicant attends an institution of higher education.",
+      "citation": "MPP §63-406.11",
+      "conceptType": "Boolean"
+    },
+    "Applicant_EnrolledHalfTimeOrMore": {
+      "definition": "True if the applicant is enrolled at least half-time.",
+      "citation": "MPP §63-406.11",
+      "conceptType": "Boolean"
+    },
+    "Applicant_IsPhysicallyFit": {
+      "definition": "True if the student is considered physically and mentally fit for employment.",
+      "citation": "MPP §63-406.11",
+      "conceptType": "Boolean"
+    },
+    "Applicant_WorkHoursPerWeek": {
+      "definition": "The number of hours per week the student engages in paid employment.",
+      "citation": "MPP §63-406.21(a)",
+      "conceptType": "Numeric"
+    },
+    "Applicant_ParentalControlUnder6": {
+      "definition": "True if applicant exerts parental control over a dependent household member under 6.",
+      "citation": "MPP §63-406.213",
+      "conceptType": "Boolean"
+    },
+    "Applicant_WorkStudyApproved": {
+      "definition": "True if the applicant is approved for state or federally financed work-study for the current term.",
+      "citation": "MPP §63-406.212",
+      "conceptType": "Boolean"
+    },
+    "Applicant_HasStudentExemption": {
+      "definition": "True if the applicant meets at least one allowable exemption under student eligibility rules.",
+      "citation": "MPP §63-406.21",
+      "conceptType": "Boolean"
+    },
+    "Applicant_ExemptionVerified": {
+      "definition": "Indicates whether required verification is provided for a claimed student exemption.",
+      "citation": "MPP §63-406.212",
+      "conceptType": "Boolean"
+    },
+
+    "Applicant_Age": {
+    "definition": "Age of applicant in years for determination of student applicability",
+    "citation": "MPP §63-406.1",
+    "conceptType": "Numeric"
+  }
+
+  }
+}
+
+
+
+}

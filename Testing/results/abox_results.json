@@ -1,0 +1,136 @@
+{
+  "passed": [
+    {
+      "id": "Rule_ResidencyRequirement",
+      "citation": "MPP \u00a763-401.1"
+    },
+    {
+      "id": "Rule_StateResidencyRequirement",
+      "citation": "MPP \u00a763-401.1"
+    },
+    {
+      "id": "Rule_SingleCountyParticipation",
+      "citation": "MPP \u00a763-401.2"
+    },
+    {
+      "id": "Rule_GrossIncomeVerificationExemption",
+      "citation": "MPP \u00a763-301"
+    },
+    {
+      "id": "Rule_NetIncomeVerificationExemption",
+      "citation": "MPP \u00a763-301"
+    },
+    {
+      "id": "Rule_NetIncomeDeductionForBenefits",
+      "citation": "MPP \u00a763-503.41"
+    },
+    {
+      "id": "Rule_GrossIncomeOverLimit",
+      "citation": "MPP \u00a763-301.1"
+    },
+    {
+      "id": "Rule_NetIncomeOverLimit",
+      "citation": "MPP \u00a763-301.2"
+    },
+    {
+      "id": "Rule_IncomeWithinLimits",
+      "citation": "MPP \u00a763-301.1-2"
+    },
+    {
+      "id": "Rule_AcceptedWithoutVerification_GrossIncome",
+      "citation": "MPP \u00a763-301.82"
+    },
+    {
+      "id": "Rule_IneligibilityWithoutGoodCause",
+      "citation": "MPP \u00a763-301.212"
+    },
+    {
+      "id": "Rule_VerificationRequirement_GrossIncome",
+      "citation": "MPP \u00a763-301.1"
+    },
+    {
+      "id": "Rule_ResourcesAcceptedWithoutVerification",
+      "citation": "MPP \u00a763-301.822"
+    },
+    {
+      "id": "Rule_ResourceTransfersRequireVerification",
+      "citation": "MPP \u00a763-301.822"
+    },
+    {
+      "id": "Rule_ResourceTransferUnverifiedViolation",
+      "citation": "MPP \u00a763-301.822"
+    }
+  ],
+  "failed": [
+    {
+      "id": "Rule_ResourceTransfersNotAccepted",
+      "citation": "MPP \u00a763-301.822"
+    }
+  ],
+  "touched": [
+    {
+      "id": "Rule_ResidencyRequirement",
+      "citation": "MPP \u00a763-401.1"
+    },
+    {
+      "id": "Rule_StateResidencyRequirement",
+      "citation": "MPP \u00a763-401.1"
+    },
+    {
+      "id": "Rule_SingleCountyParticipation",
+      "citation": "MPP \u00a763-401.2"
+    },
+    {
+      "id": "Rule_GrossIncomeVerificationExemption",
+      "citation": "MPP \u00a763-301"
+    },
+    {
+      "id": "Rule_NetIncomeVerificationExemption",
+      "citation": "MPP \u00a763-301"
+    },
+    {
+      "id": "Rule_ResourceTransfersNotAccepted",
+      "citation": "MPP \u00a763-301.822"
+    },
+    {
+      "id": "Rule_NetIncomeDeductionForBenefits",
+      "citation": "MPP \u00a763-503.41"
+    },
+    {
+      "id": "Rule_GrossIncomeOverLimit",
+      "citation": "MPP \u00a763-301.1"
+    },
+    {
+      "id": "Rule_NetIncomeOverLimit",
+      "citation": "MPP \u00a763-301.2"
+    },
+    {
+      "id": "Rule_IncomeWithinLimits",
+      "citation": "MPP \u00a763-301.1-2"
+    },
+    {
+      "id": "Rule_AcceptedWithoutVerification_GrossIncome",
+      "citation": "MPP \u00a763-301.82"
+    },
+    {
+      "id": "Rule_IneligibilityWithoutGoodCause",
+      "citation": "MPP \u00a763-301.212"
+    },
+    {
+      "id": "Rule_VerificationRequirement_GrossIncome",
+      "citation": "MPP \u00a763-301.1"
+    },
+    {
+      "id": "Rule_ResourcesAcceptedWithoutVerification",
+      "citation": "MPP \u00a763-301.822"
+    },
+    {
+      "id": "Rule_ResourceTransfersRequireVerification",
+      "citation": "MPP \u00a763-301.822"
+    },
+    {
+      "id": "Rule_ResourceTransferUnverifiedViolation",
+      "citation": "MPP \u00a763-301.822"
+    }
+  ]
+}

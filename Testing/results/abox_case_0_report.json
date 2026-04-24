@@ -1,0 +1,33 @@
+{
+  "case_index": 0,
+  "case_id": "105162762",
+  "category": "Residency",
+  "facts": {
+    "HouseholdSize": null,
+    "GrossIncome": null,
+    "NetIncome": null,
+    "Assets": null,
+    "ShelterExpense": null,
+    "MedicalDeduction": null,
+    "CitizenStatus": "citizen",
+    "StudentFlag": false,
+    "ElderlyFlag": false,
+    "DisabledFlag": false,
+    "Applicant_ProvidedVerification": true,
+    "ResidenceCounty": "Texas",
+    "ApplicationCounty": "San Diego",
+    "Applicant_Eligible": false
+  },
+  "agency_explanation": "Due to your height, you are not allowed food stamps",
+  "expected_sat_unsat": "SAT",
+  "expected_violated_rules": [
+    "MPP \u00a763-401"
+  ],
+  "solver_outcome": null,
+  "match_status": "MISMATCH",
+  "smt_result": {
+    "status": "sat",
+    "satisfied": [],
+    "violated": []
+  }
+}

@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+*.egg-info/
+.env
+Raw Data/Regulations_Wrapper/data/data_json/train.cfr.jsonl.xz
+Raw Data/Laws/mpp_section_sub_embeddings.json
+Raw Data/qc_pub_fy2023_2.csv
+Raw Data/Legal_Documents/title7.json
+Raw Data/

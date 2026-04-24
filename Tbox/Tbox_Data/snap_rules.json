@@ -1,0 +1,384 @@
+[
+  {
+    "id": "Rule_ResidencyRequirement",
+    "citation": "MPP §63-401.1",
+    "hasText": "A household must reside in the county in which it files an application for participation.",
+    "class": "Residency",
+    "subclass": "CountyResidency",
+    "appliesTo": ["Applicant_ResidenceCounty", "Applicant_ApplicationCounty"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(Applicant_ResidenceCounty != Applicant_ApplicationCounty, Not(Applicant_Eligible))",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_StateResidencyRequirement",
+    "citation": "MPP §63-401.1",
+    "hasText": "A household must reside within the administering state to qualify for participation.",
+    "class": "Residency",
+    "subclass": "StateResidency",
+    "appliesTo": ["Applicant_ResidenceState", "AdministeringState"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(Applicant_ResidenceState != AdministeringState, Not(Applicant_Eligible))",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_SingleCountyParticipation",
+    "citation": "MPP §63-401.2",
+    "hasText": "No individual may participate as a member of more than one household or county in any month except for eligible residents of shelters for battered women and children.",
+    "class": "Residency",
+    "subclass": "SingleCountyParticipation",
+    "appliesTo": ["Applicant_ResidenceCounty", "Applicant_ApplicationCounty"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(Applicant_ResidenceCounty != Applicant_ApplicationCounty, Not(Applicant_Eligible))",
+    "hasModality": "Prohibition",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_GrossIncomeVerificationExemption",
+    "citation": "MPP §63-301",
+    "hasText": "For categorically eligible PA households, the county welfare department shall not require verification of gross income.",
+    "class": "IncomeEligibility",
+    "subclass": "GrossIncomeLimit",
+    "appliesTo": ["CategoricallyEligiblePAHousehold", "Agency_RequiresGrossIncomeVerification"],
+    "determines": ["Agency_RequiresGrossIncomeVerification"],
+    "hasLogic": "Implies(CategoricallyEligiblePAHousehold, Not(Agency_RequiresGrossIncomeVerification))",
+    "hasModality": "Permission",
+    "conceptType": "Constraint"
+  },
+  {
+    "id": "Rule_NetIncomeVerificationExemption",
+    "citation": "MPP §63-301",
+    "hasText": "For categorically eligible PA households, the county welfare department shall not require verification of net income.",
+    "class": "IncomeEligibility",
+    "subclass": "NetIncomeLimit",
+    "appliesTo": ["CategoricallyEligiblePAHousehold", "Agency_RequiresNetIncomeVerification"],
+    "determines": ["Agency_RequiresNetIncomeVerification"],
+    "hasLogic": "Implies(CategoricallyEligiblePAHousehold, Not(Agency_RequiresNetIncomeVerification))",
+    "hasModality": "Permission",
+    "conceptType": "Constraint"
+  },
+  {
+    "id": "Rule_ResourceTransfersNotAccepted",
+    "citation": "MPP §63-301.822",
+    "hasText": "Resource transfers shall not be accepted without verification for categorically eligible households.",
+    "class": "ResourceEligibility",
+    "subclass": "ResourceTransfers",
+    "appliesTo": ["ResourceTransfers", "AcceptedWithoutVerification_Resources"],
+    "determines": ["VerificationRequired"],
+    "hasLogic": "Implies(ResourceTransfers, Not(AcceptedWithoutVerification_Resources))",
+    "hasModality": "Prohibition",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_SponsoredNoncitizenInformationRequired",
+    "citation": "MPP §63-301.822",
+    "hasText": "Sponsored noncitizens shall cooperate in providing sponsor information as specified in Section 63-405.7.",
+    "class": "SponsoredNoncitizen",
+    "subclass": "SponsorInformationRequirement",
+    "appliesTo": ["SponsoredNoncitizen", "MustProvide_SponsorInformation"],
+    "determines": ["MustProvide"],
+    "hasLogic": "Implies(SponsoredNoncitizen, MustProvide_SponsorInformation)",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_NetIncomeDeductionForBenefits",
+    "citation": "MPP §63-503.41",
+    "hasText": "Thirty percent of the household's net food stamp income shall be deducted from the reduced Thrifty Food Plan amount.",
+    "class": "BenefitComputation",
+    "subclass": "IncomeDeduction",
+    "appliesTo": ["NetIncome", "ThriftyFoodPlanAmount", "ReductionRate"],
+    "determines": ["BenefitAmount"],
+    "hasLogic": "BenefitAmount == (ThriftyFoodPlanAmount * (1 - ReductionRate)) - (3/10 * NetIncome)",
+    "hasModality": "Computation",
+    "conceptType": "Numeric"
+  },
+  {
+    "id": "Rule_GrossIncomeOverLimit",
+    "citation": "MPP §63-301.1",
+    "hasText": "Households whose gross income exceeds the established limit are ineligible for benefits.",
+    "class": "IncomeEligibility",
+    "subclass": "GrossIncomeLimit",
+    "appliesTo": ["GrossIncome", "GrossIncomeLimit"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(GrossIncome > GrossIncomeLimit, Not(Applicant_Eligible))",
+    "hasModality": "Prohibition",
+    "conceptType": "Numeric"
+  },
+  {
+    "id": "Rule_GrossIncomeWithinLimit",
+    "citation": "MPP §63-301.1",
+    "hasText": "Households whose gross income does not exceed the established limit meet the gross income test for eligibility.",
+    "class": "IncomeEligibility",
+    "subclass": "GrossIncomeLimit",
+    "appliesTo": ["GrossIncome", "GrossIncomeLimit"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(GrossIncome <= GrossIncomeLimit, Applicant_Eligible)",
+    "hasModality": "Permission",
+    "conceptType": "Numeric"
+  },
+  {
+    "id": "Rule_NetIncomeOverLimit",
+    "citation": "MPP §63-301.2",
+    "hasText": "Households whose net income exceeds the limit are ineligible for participation.",
+    "class": "IncomeEligibility",
+    "subclass": "NetIncomeLimit",
+    "appliesTo": ["NetIncome", "NetIncomeLimit"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(NetIncome > NetIncomeLimit, Not(Applicant_Eligible))",
+    "hasModality": "Prohibition",
+    "conceptType": "Numeric"
+  },
+  {
+    "id": "Rule_IncomeWithinLimits",
+    "citation": "MPP §63-301.1-2",
+    "hasText": "Households with both gross and net income at or below the respective limits are eligible for participation.",
+    "class": "IncomeEligibility",
+    "subclass": "CombinedIncomeTest",
+    "appliesTo": ["GrossIncome", "NetIncome", "GrossIncomeLimit", "NetIncomeLimit"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(And(GrossIncome <= GrossIncomeLimit, NetIncome <= NetIncomeLimit), Applicant_Eligible)",
+    "hasModality": "Permission",
+    "conceptType": "Numeric"
+  },
+  {
+    "id": "Rule_AcceptedWithoutVerification_GrossIncome",
+    "citation": "MPP §63-301.82",
+    "hasText": "If the gross income factor is accepted without verification for categorically eligible PA households, it shall not affect eligibility.",
+    "class": "IncomeEligibility",
+    "subclass": "GrossIncomeLimit",
+    "appliesTo": ["AcceptedWithoutVerification_GrossIncome", "Applicant_Eligible"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(AcceptedWithoutVerification_GrossIncome == True, Applicant_Eligible)",
+    "hasModality": "Permission",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_GoodCauseForVoluntaryQuit",
+    "citation": "MPP §63-301.212",
+    "hasText": "The CWD shall determine whether good cause exists upon finding that an applicant voluntarily quit or reduced work hours.",
+    "class": "IncomeEligibility",
+    "subclass": "WorkEffortAndGoodCause",
+    "appliesTo": ["Applicant_VoluntaryQuit", "Applicant_ReducedWorkHours", "Agency_DeterminesGoodCause"],
+    "determines": ["Agency_DeterminesGoodCause"],
+    "hasLogic": "Implies(Or(Applicant_VoluntaryQuit == True, Applicant_ReducedWorkHours == True), Agency_DeterminesGoodCause == True)",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_IneligibilityWithoutGoodCause",
+    "citation": "MPP §63-301.212",
+    "hasText": "Applicants who voluntarily quit or reduce work effort without good cause are ineligible for benefits.",
+    "class": "IncomeEligibility",
+    "subclass": "WorkEffortAndGoodCause",
+    "appliesTo": ["Applicant_VoluntaryQuit", "Applicant_ReducedWorkHours", "Applicant_HasGoodCause"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(And(Or(Applicant_VoluntaryQuit == True, Applicant_ReducedWorkHours == True), Applicant_HasGoodCause == False), Not(Applicant_Eligible))",
+    "hasModality": "Prohibition",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_VerificationRequirement_GrossIncome",
+    "citation": "MPP §63-301.1",
+    "hasText": "When the gross income information provided by the applicant is questionable, the agency must verify it before eligibility determination.",
+    "class": "IncomeEligibility",
+    "subclass": "GrossIncomeVerification",
+    "appliesTo": ["Applicant_ProvidedGrossIncome", "Agency_RequiresGrossIncomeVerification"],
+    "determines": ["Agency_RequiresGrossIncomeVerification"],
+    "hasLogic": "Implies(Information_Questionable == True, Agency_RequiresGrossIncomeVerification == True)",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_ResourcesAcceptedWithoutVerification",
+    "citation": "MPP §63-301.822",
+    "hasText": "Resources are accepted without verification for categorically eligible households.",
+    "class": "ResourceEligibility",
+    "subclass": "AcceptedWithoutVerification_Resources",
+    "appliesTo": ["CategoricallyEligiblePAHousehold", "AcceptedWithoutVerification_Resources"],
+    "determines": ["AcceptedWithoutVerification_Resources"],
+    "hasLogic": "Implies(CategoricallyEligiblePAHousehold == True, AcceptedWithoutVerification_Resources == True)",
+    "hasModality": "Permission",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_ResourceTransfersRequireVerification",
+    "citation": "MPP §63-301.822",
+    "hasText": "Resource transfers must be verified to determine eligibility.",
+    "class": "ResourceEligibility",
+    "subclass": "VerificationRequired",
+    "appliesTo": ["ResourceTransfers", "VerificationRequired"],
+    "determines": ["VerificationRequired"],
+    "hasLogic": "Implies(ResourceTransfers == True, VerificationRequired == True)",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_ResourceTransferUnverifiedViolation",
+    "citation": "MPP §63-301.822",
+    "hasText": "If the household transfers resources but the agency fails to verify them, eligibility determination violates policy.",
+    "class": "ResourceEligibility",
+    "subclass": "ResourceTransfers",
+    "appliesTo": ["ResourceTransfers", "VerificationRequired", "Agency_ViolatesPolicy"],
+    "determines": ["Agency_ViolatesPolicy"],
+    "hasLogic": "Implies(And(ResourceTransfers == True, VerificationRequired == False), Agency_ViolatesPolicy == True)",
+    "hasModality": "Prohibition",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_MedicalDeduction_EligibilityCondition",
+    "citation": "MPP §63-502.33",
+    "hasText": "Households containing an elderly or disabled member are entitled to a deduction for verified medical expenses exceeding $35 per month.",
+    "class": "MedicalExpenseDeduction",
+    "subclass": "MedicalDeduction",
+    "appliesTo": ["ElderlyFlag", "DisabledFlag", "MedicalDeduction", "MedicalExpenseThreshold"],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(And(Or(ElderlyFlag == True, DisabledFlag == True), MedicalDeduction <= MedicalExpenseThreshold), Not(Applicant_Eligible))",
+    "hasModality": "Prohibition",
+    "conceptType": "Numeric"
+  },
+  {
+    "id": "Rule_MedicalDeduction_AppliedCorrectly",
+    "citation": "MPP §63-502.33",
+    "hasText": "If an elderly or disabled household has verified medical expenses above the threshold, the deduction shall be applied in computing net income.",
+    "class": "MedicalExpenseDeduction",
+    "subclass": "MedicalDeductionApplied",
+    "appliesTo": ["ElderlyFlag", "DisabledFlag", "MedicalDeduction", "MedicalExpenseThreshold", "MedicalDeductionApplied"],
+    "determines": ["MedicalDeductionApplied"],
+    "hasLogic": "Implies(And(Or(ElderlyFlag == True, DisabledFlag == True), MedicalDeduction > MedicalExpenseThreshold), MedicalDeductionApplied == True)",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_MedicalDeduction_VerificationRequired",
+    "citation": "MPP §63-502.33(c)",
+    "hasText": "Medical expenses claimed as deductions must be verified by the county welfare department before application.",
+    "class": "MedicalExpenseDeduction",
+    "subclass": "MedicalVerificationRequired",
+    "appliesTo": ["MedicalDeduction", "MedicalVerificationRequired"],
+    "determines": ["MedicalVerificationRequired"],
+    "hasLogic": "Implies(MedicalDeduction > 0, MedicalVerificationRequired == True)",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_ExcessMedicalCostNotDeductible",
+    "citation": "MPP §63-502.33(c)",
+    "hasText": "Medical expenses exceeding allowable limits or not verified shall not be deducted from income.",
+    "class": "MedicalExpenseDeduction",
+    "subclass": "ExcessMedicalCostNotDeductible",
+    "appliesTo": ["MedicalDeduction", "MedicalExpenseThreshold", "MedicalVerificationRequired"],
+    "determines": ["ExcessMedicalCostNotDeductible"],
+    "hasLogic": "Implies(Or(MedicalDeduction > (10 * MedicalExpenseThreshold), MedicalVerificationRequired == False), ExcessMedicalCostNotDeductible == True)",
+    "hasModality": "Prohibition",
+    "conceptType": "Boolean"
+  },
+  {
+    "id": "Rule_CountableIncomeAfterMedicalDeduction",
+    "citation": "MPP §63-502.33",
+    "hasText": "Countable income after medical deductions is the household's total income minus allowable medical deductions.",
+    "class": "MedicalExpenseDeduction",
+    "subclass": "CountableIncomeAfterMedicalDeduction",
+    "appliesTo": ["GrossIncome", "MedicalDeduction"],
+    "determines": ["CountableIncomeAfterMedicalDeduction"],
+    "hasLogic": "CountableIncomeAfterMedicalDeduction == GrossIncome - MedicalDeduction",
+    "hasModality": "Computation",
+    "conceptType": "Numeric"
+  },
+  {
+    "id": "Rule_AllowableMedicalExpenseItems",
+    "citation": "MPP §63-502.331",
+    "hasText": "Allowable medical expenses include prescription drugs, medical supplies, dental care, health insurance premiums, and costs for nursing services.",
+    "class": "MedicalExpenseDeduction",
+    "subclass": "AllowableMedicalExpenseItem",
+    "appliesTo": ["AllowableMedicalExpenseItem"],
+    "determines": ["MedicalDeduction"],
+    "hasLogic": "Implies(AllowableMedicalExpenseItem in ['prescription_drugs','medical_supplies','insurance_premiums','nursing_services'], MedicalDeduction >= 0)",
+    "hasModality": "Permission",
+    "conceptType": "Categorical"
+  },
+  {
+    "id": "Rule_ShelterCap_Enforced",
+    "citation": "MPP §63-502.34",
+    "hasText": "Shelter deductions for households without elderly or disabled members shall not exceed the maximum shelter cap amount.",
+    "class": "ShelterDeduction",
+    "subclass": "ShelterCapLimit",
+    "appliesTo": ["ShelterExpense", "ShelterCapLimit", "ElderlyFlag", "DisabledFlag"],
+    "determines": ["ExcessShelterExpenseDisallowed"],
+    "hasLogic": "Implies(And(ElderlyFlag == False, DisabledFlag == False, ShelterExpense > ShelterCapLimit), ExcessShelterExpenseDisallowed == True)",
+    "hasModality": "Prohibition",
+    "conceptType": "Numeric"
+  },
+  {
+    "id": "Rule_ShelterCap_BasicLimit",
+    "citation": "MPP §63-502.34",
+    "hasText": "Shelter expenses that exceed the allowable cap amount are not fully deductible.",
+    "class": "ShelterDeduction",
+    "subclass": "ShelterCapLimit",
+    "appliesTo": ["ShelterExpense", "ShelterCapLimit", "ShelterDeductionApplied"],
+    "determines": ["ShelterDeductionApplied"],
+    "hasLogic": "Implies(ShelterExpense > ShelterCapLimit, ShelterDeductionApplied == False)",
+    "hasModality": "Prohibition",
+    "conceptType": "Numeric"
+  },
+
+  {
+    "id": "Rule_StudentApplicability_63_406_1",
+    "citation": "MPP §63-406.1",
+    "hasText": "Any person age 18 through 49, physically and mentally fit for employment, and enrolled at least half-time in an institution of higher education shall be subject to student eligibility requirements.",
+    "class": "StudentEligibility",
+    "subclass": "Applicability",
+    "appliesTo": [
+      "Applicant_Age",
+      "Applicant_IsPhysicallyFit",
+      "Applicant_EnrolledHalfTimeOrMore"
+    ],
+    "determines": ["Applicant_IsStudent"],
+    "hasLogic": "Applicant_IsStudent == And(Applicant_Age >= 18, Applicant_Age <= 49, Applicant_IsPhysicallyFit == True, Applicant_EnrolledHalfTimeOrMore == True)",
+    "hasModality": "Definition",
+    "conceptType": "Boolean"
+  },
+
+  {
+    "id": "Rule_StudentMustMeetExemption_63_406_21",
+    "citation": "MPP §63-406.21",
+    "hasText": "Any student as defined in Section 63-406.1 shall meet at least one allowable student exemption to be eligible to participate.",
+    "class": "StudentEligibility",
+    "subclass": "EligibilityRequirement",
+    "appliesTo": [
+      "Applicant_IsStudent",
+      "Applicant_HasStudentExemption"
+    ],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(Applicant_IsStudent == True, Applicant_HasStudentExemption == True)",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  },
+
+  {
+    "id": "Rule_VerificationRequiredForEligibility",
+    "citation": "MPP §63-401.1, §63-301.82, §63-406.21 (general verification obligations)",
+    "hasText": "When eligibility information is questionable or required verification is not provided, the applicant shall not be determined eligible.",
+    "class": "EligibilityVerification",
+    "subclass": "GenericVerificationRequirement",
+    "appliesTo": [
+      "Applicant_ProvidedVerification",
+      "Applicant_Eligible"
+    ],
+    "determines": ["Applicant_Eligible"],
+    "hasLogic": "Implies(Applicant_ProvidedVerification == False, Not(Applicant_Eligible))",
+    "hasModality": "Obligation",
+    "conceptType": "Boolean"
+  }
+  
+  
+  
+  
+
+
+
+
+  
+]
