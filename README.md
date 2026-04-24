@@ -7,9 +7,9 @@ The framework requires two types of input: (1) a statutory corpus encoding the l
 The statutory corpus comes from the CalFresh regulations in MPP Division 63, published by the California Department of Social Services (CDSS). These span chapters on eligibility criteria, benefit computation, and administrative procedures, stored as separate document files on the CDSS website. We downloaded, assembled, and cleaned them into a unified JSON structure for downstream processing. This corpus serves as the ground truth for ontology construction of the law.
 
 Citation
-bibtex@inproceedings{sunny2026neurosymbolic,
-  title={Neuro-Symbolic Auditing Framework for Public Benefit Eligibility},
-  author={Sunny, Allen and Sivan-Sevilla, Ido},
-  booktitle={Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT)},
+bibtex@inproceedings{sunny2026neurosymbolic,  
+  title={Neuro-Symbolic Auditing Framework for Public Benefit Eligibility},  
+  author={Sunny, Allen and Sivan-Sevilla, Ido},  
+  booktitle={Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT)},  
   year={2026}
 }
