@@ -8,12 +8,8 @@ The statutory corpus comes from the CalFresh regulations in MPP Division 63, pub
 
 Citation
 bibtex@inproceedings{sunny2026neurosymbolic,
-
   title={Neuro-Symbolic Auditing Framework for Public Benefit Eligibility},
-  
   author={Sunny, Allen and Sivan-Sevilla, Ido},
-  
   booktitle={Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT)},
-  
   year={2026}
 }
