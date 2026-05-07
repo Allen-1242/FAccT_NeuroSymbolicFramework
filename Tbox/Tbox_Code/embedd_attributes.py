@@ -9,7 +9,7 @@ BATCH_SIZE  = 32
 
 # ---------- LOAD MODEL ----------
 device = "cuda" if torch.cuda.is_available() else "cpu"
-print(f"🚀 Loading model '{MODEL_NAME}' on {device} ...")
+print(f"Loading model '{MODEL_NAME}' on {device} ...")
 model = SentenceTransformer(MODEL_NAME, device=device)
 
 # ---------- LOAD DATA ----------
@@ -69,12 +69,12 @@ for idx, section in enumerate(data, start=1):
         ]
 
     if idx % 100 == 0 or idx == total:
-        print(f"✅ Processed {idx}/{total} sections")
+        print(f"Processed {idx}/{total} sections")
 
 # ---------- SAVE ----------
 os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
 
-print(f"\n🎯 Done. Generated embeddings for {total} sections and their subsections.")
-print(f"💾 Saved to: {OUTPUT_FILE}")
+print(f"\nDone. Generated embeddings for {total} sections and their subsections.")
+print(f"Saved to: {OUTPUT_FILE}")
