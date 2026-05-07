@@ -56,7 +56,7 @@ metadata = {
     for i, doc in enumerate(documents)
 }
 
-# === Save index and metadata ===
+# === Save index and  ===
 faiss.write_index(index, "calfresh_triggers.faiss")
 
 with open("calfresh_metadata.json", "w") as f:
