@@ -47,9 +47,9 @@ if not results:
     print(f"\nNo subsections above cutoff ({SUBSECTION_CUTOFF}).")
 else:
     results = sorted(results, key=lambda x: x["subsection_score"], reverse=True)
-    print(f"\n🔍 Subsections above cutoff ({SUBSECTION_CUTOFF}): {len(results)}")
+    print(f"\nSubsections above cutoff ({SUBSECTION_CUTOFF}): {len(results)}")
     for r in results:
-        print(f"\n📘 Section: {r['section_citation']} (section_score={r['section_score']:.3f})")
-        print(f"   ↳ Subsection_score={r['subsection_score']:.3f}")
-        print("   Text:", r['subsection_text'][:200].strip(), "...")
-        print("   Attributes:", ", ".join(r['attributes']))
+        print(f"\nSection: {r['section_citation']} (section_score={r['section_score']:.3f})")
+        print(f"Subsection_score={r['subsection_score']:.3f}")
+        print("Text:", r['subsection_text'][:200].strip(), "...")
+        print("Attributes:", ", ".join(r['attributes']))
