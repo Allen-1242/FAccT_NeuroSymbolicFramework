@@ -18,7 +18,7 @@ def load_jsonl(path):
                 elif isinstance(data, dict):
                     documents.append(data)
                 else:
-                    print(f"⚠️ Line {i} has unexpected type: {type(data)}")
+                    print(f"Line {i} has unexpected type: {type(data)}")
 
             except json.JSONDecodeError as e:
                 print(f" JSON decode error on line {i}: {e}")
