@@ -15,7 +15,7 @@ model = SentenceTransformer(MODEL_NAME, device=device)
 # ---------- LOAD DATA ----------
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
-print(f"📘 Loaded {len(data)} sections from {INPUT_FILE}")
+print(f"Loaded {len(data)} sections from {INPUT_FILE}")
 
 # ---------- Helper: split text into subsections ----------
 def split_subsections(text):
