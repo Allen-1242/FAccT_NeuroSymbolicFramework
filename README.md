@@ -14,4 +14,4 @@ bibtex@inproceedings{sunny2026neurosymbolic,
   year={2026}
 }
 
-Please note that there is substantial clean up needed in the code repository, updates will be rolled out 
+**Please note that there is substantial clean up needed in the code repository, updates will be rolled out**
