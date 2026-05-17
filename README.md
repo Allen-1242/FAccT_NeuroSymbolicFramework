@@ -1,6 +1,7 @@
 **Neuro-Symbolic Auditing Framework for Public Benefit Eligibility**
 
 **Please note that there is substantial clean up needed in the code repository, updates will be rolled out**
+**Several important files were dropped during system movement and will have to be recreated, will take some time**
 
 
 A neuro-symbolic framework for auditing CalFresh (SNAP) eligibility determinations, combining OWL ontologies, Z3/SMT formal verification, and LLM-based reasoning to achieve 97.7% accuracy against judicial rulings. Presented at ACM FAccT 2026.
