@@ -1,6 +1,6 @@
 **Neuro-Symbolic Auditing Framework for Public Benefit Eligibility**
 
-**Please note that there is substantial clean up needed in the code repository, updates will be rolled out**
+**Please note that there is substantial clean up needed in the code repository, updates will be rolled out current repository is a dump from another system**
 **Several important files were dropped during system movement and will have to be recreated, will take some time**
 
 
