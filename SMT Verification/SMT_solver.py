@@ -71,7 +71,7 @@ def load_rules(rules_path, symbols):
                 "text": r.get("hasText", "")
             })
         except Exception as e:
-            print(f"⚠️  Skipped {r.get('id')}: {e}")
+            print(f"Skipped {r.get('id')}: {e}")
     print(f"Loaded {len(parsed_rules)} rules")
     return parsed_rules
 
