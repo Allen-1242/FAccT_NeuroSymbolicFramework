@@ -213,9 +213,9 @@ cfr_refs = sum(1 for e in entries for r in e.get("references", []) if r["type"] 
 usc_refs = sum(1 for e in entries for r in e.get("references", []) if r["type"] == "USC")
 mpp_refs = sum(1 for e in entries for r in e.get("references", []) if r["type"] == "MPP")
 
-print(f"✅ Extracted {total} sections to {output_path}")
-print(f"⚙️  Cleaned orphan count: {orphans}")
-print(f"🧭 Auto-detected remaining (should be 0): {auto}")
-print(f"📘 References — MPP: {mpp_refs}, CFR: {cfr_refs}, USC: {usc_refs}")
+print(f"Extracted {total} sections to {output_path}")
+print(f"Cleaned orphan count: {orphans}")
+print(f"Auto-detected remaining (should be 0): {auto}")
+print(f" References — MPP: {mpp_refs}, CFR: {cfr_refs}, USC: {usc_refs}")
 if total > 0:
-    print('🔹 Example:', entries[0])
+    print('Example:', entries[0])
