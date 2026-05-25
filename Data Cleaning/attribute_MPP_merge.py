@@ -14,7 +14,7 @@ with open(MPP_FILE, "r", encoding="utf-8") as f:
 with open(ATTR_FILE, "r", encoding="utf-8") as f:
     attr_data = json.load(f)
 
-print(f"📘 Loaded {len(mpp_data)} MPP nodes and {len(attr_data)} attribute entries.")
+print(f"Loaded {len(mpp_data)} MPP nodes and {len(attr_data)} attribute entries.")
 
 # ---------- HELPER: Normalize citation ----------
 def normalize_citation(cite: str) -> str:
@@ -69,4 +69,4 @@ os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(merged, f, indent=2, ensure_ascii=False)
 
-print(f"💾 Saved merged data → {OUTPUT_FILE}")
+print(f"Saved merged data → {OUTPUT_FILE}")
