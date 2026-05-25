@@ -61,8 +61,8 @@ for node in mpp_data:
 
     merged.append(merged_node)
 
-print(f"✅ Successfully merged {attached} nodes with attributes.")
-print(f"⚠️  {missing} nodes had no attribute match.")
+print(f"Successfully merged {attached} nodes with attributes.")
+print(f"{missing} nodes had no attribute match.")
 
 # ---------- SAVE ----------
 os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
