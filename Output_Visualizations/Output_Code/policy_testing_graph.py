@@ -40,7 +40,7 @@ def main():
         for clause in clauses:
             session.execute_write(load_policy_clause, clause)
 
-    print(f"✅ Uploaded {len(clauses)} OBBB Policy Clauses and their relationships!")
+    print(f"Uploaded {len(clauses)} OBBB Policy Clauses and their relationships!")
 
 if __name__ == "__main__":
     main()
