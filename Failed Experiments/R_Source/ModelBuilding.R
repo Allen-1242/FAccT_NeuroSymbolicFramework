@@ -63,7 +63,7 @@ predictor <- Predictor$new(
   model = rf_model,
   data  = train_df %>% select(-IS_APPROVED),
   y     = train_df$IS_APPROVED,
-  predict.function = ranger_predict,   # ✅ key fix
+  predict.function = ranger_predict,   # key fix
   type  = "prob"
 )
 
