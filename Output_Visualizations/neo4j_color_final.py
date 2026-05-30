@@ -41,4 +41,4 @@ with driver.session() as session:
 
 driver.close()
 
-print("\n✨ Done: SATISFIED laws marked in Neo4j! 🎯")
+print("\n Done: SATISFIED laws marked in Neo4j!")
