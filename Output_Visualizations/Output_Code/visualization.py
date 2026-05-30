@@ -59,7 +59,7 @@ def reset_statuses(tx):
 # --- Push updates to Neo4j ---
 with driver.session(database="neo4j") as session:
     cleared = session.execute_write(reset_statuses)
-    print(f"🧹 Cleared {cleared} existing status labels/properties.")
+    print(f" Cleared {cleared} existing status labels/properties.")
 
     if passed:
         updated_passed = session.execute_write(mark_nodes, passed, "passed")
@@ -77,7 +77,7 @@ with driver.session(database="neo4j") as session:
     RETURN count(n) AS updated
     """
     updated_default = session.run(query_default).single()["updated"]
-    print(f"🔵 Updated {updated_default} default nodes.")
+    print(f" Updated {updated_default} default nodes.")
 
 driver.close()
 print("Neo4j visualization update complete.")
