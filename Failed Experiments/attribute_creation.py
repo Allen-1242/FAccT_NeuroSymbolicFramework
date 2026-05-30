@@ -9,7 +9,7 @@ THRESHOLD = 0.55
 
 # ---------- Load embedding model ----------
 device = "cuda" if torch.cuda.is_available() else "cpu"
-print(f"🚀 Using device: {device}")
+print(f"Using device: {device}")
 model = SentenceTransformer("BAAI/bge-base-en-v1.5", device=device)
 
 # ---------- Attribute categories ----------
@@ -85,14 +85,14 @@ def classify_json(input_path=INPUT_FILE, output_path=OUTPUT_FILE):
 
     results = []
     total = len(data)
-    print(f"\n📘 Loaded {total} entries from {input_path}")
+    print(f"\n Loaded {total} entries from {input_path}")
 
     # Process in GPU-safe batches
     for batch_start in range(0, total, BATCH_SIZE):
         batch_end = min(batch_start + BATCH_SIZE, total)
         batch = data[batch_start:batch_end]
 
-        print(f"\n⚙️  Processing batch {batch_start+1}-{batch_end} of {total}")
+        print(f"\n Processing batch {batch_start+1}-{batch_end} of {total}")
         for i, item in enumerate(batch, start=batch_start + 1):
             text = item.get("text") or item.get("subsection") or item.get("embedding_input")
             if not text:
@@ -107,7 +107,7 @@ def classify_json(input_path=INPUT_FILE, output_path=OUTPUT_FILE):
                 result["main_section"] = item.get("main_section", None)
                 results.append(result)
             except Exception as e:
-                print(f"⚠️  Error on item {i} ({citation}): {e}")
+                print(f" Error on item {i} ({citation}): {e}")
                 continue
 
     # Save enriched file
@@ -115,9 +115,9 @@ def classify_json(input_path=INPUT_FILE, output_path=OUTPUT_FILE):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
-    print(f"\n✅ Classification complete.")
-    print(f"💾 Saved to: {output_path}")
-    print(f"📊 Total processed: {len(results)} entries\n")
+    print(f"\n Classification complete.")
+    print(f"  Saved to: {output_path}")
+    print(f"  Total processed: {len(results)} entries\n")
     return results
 
 # ---------- MAIN ----------
